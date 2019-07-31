@@ -57,7 +57,7 @@ export default class WeTTy extends EventEmitter {
             .login(socket)
             .then((username: string) => {
               this.emit('debug', `username: ${username.trim()}`);
-              args[1] = `${username.trim()}@${args[1]}`;
+              //args[1] = `${username.trim()}@${args[1]}`;
               this.emit('debug', `cmd : ${args.join(' ')}`);
               return term.spawn(socket, args);
             })

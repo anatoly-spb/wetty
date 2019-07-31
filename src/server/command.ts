@@ -63,7 +63,7 @@ function sshOptions(
   const sshRemoteOptsBase = [
     'luit',
     '-encoding',
-    "'CP 1215'",
+    "'CP 1251'",
     'telnet',
     host,
     port,
