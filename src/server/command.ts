@@ -61,13 +61,12 @@ function sshOptions(
 ): string[] {
   const cmd = parseCommand(command, path);
   const sshRemoteOptsBase = [
-    'ssh',
+    'luit',
+    '-encoding',
+    "'CP 1215'",
+    'telnet',
     host,
-    '-t',
-    '-p',
     port,
-    '-o',
-    `PreferredAuthentications=${auth}`,
   ];
   if (key) {
     return sshRemoteOptsBase.concat(['-i', key, cmd]);

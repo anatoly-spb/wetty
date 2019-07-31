@@ -13,7 +13,7 @@ const xterm = {
 export default class Term {
   public static spawn(socket: SocketIO.Socket, args: string[]): void {
     const term = spawn('/usr/bin/env', args, xterm);
-    const address = args[0] === 'ssh' ? args[1] : 'localhost';
+    const address = args[0] === 'luit' ? args[2] : 'localhost';
     events.spawned(term.pid, address);
     socket.emit('login');
     term.on('exit', code => {
