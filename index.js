@@ -41,6 +41,11 @@ if (require.main === module) {
           type: 'string',
           default: process.env.SSHUSER || '',
         },
+        encoding: {
+          demand: false,
+          description: 'encoding',
+          type: 'string'
+        },
         title: {
           demand: false,
           description: 'window title',

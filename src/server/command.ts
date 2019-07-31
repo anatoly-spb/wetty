@@ -26,7 +26,7 @@ export default (
       conn: { remoteAddress },
     },
   }: Socket,
-  { user, host, port, auth, pass, key }: SSH,
+  { user, host, port, auth, pass, key, encoding }: SSH,
   command: string
 ): { args: string[]; user: boolean } => ({
   args: localhost(host)
@@ -38,6 +38,7 @@ export default (
           pass,
           command,
           auth,
+          encoding,
         }),
         key
       ),
@@ -56,14 +57,14 @@ function parseCommand(command: string, path?: string): string {
 }
 
 function sshOptions(
-  { pass, path, command, host, port, auth }: { [s: string]: string },
+  { pass, path, command, host, port, auth, encoding}: { [s: string]: string },
   key?: string
 ): string[] {
   const cmd = parseCommand(command, path);
   const sshRemoteOptsBase = [
     'luit',
     '-encoding',
-    "'CP 1251'",
+    encoding,
     'telnet',
     host,
     port,

@@ -5,6 +5,7 @@ export interface SSH {
   port: number;
   pass?: string;
   key?: string;
+  encoding: string;
 }
 
 export interface SSL {

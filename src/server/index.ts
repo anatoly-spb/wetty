@@ -18,6 +18,7 @@ export interface Options {
   title: string;
   command?: string;
   bypasshelmet?: boolean;
+  encoding?: string;
 }
 
 interface CLI extends Options {
@@ -40,6 +41,7 @@ export default class Server {
     sslkey,
     sslcert,
     bypasshelmet,
+    encoding
   }: Options): Promise<void> {
     wetty
       .on('exit', ({ code, msg }: { code: number; msg: string }) => {
@@ -61,6 +63,7 @@ export default class Server {
         title,
         pass: sshpass,
         key: sshkey,
+        encoding: encoding
       },
       { base, host, port, title, bypasshelmet },
       command,

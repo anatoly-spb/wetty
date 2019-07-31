@@ -15,7 +15,7 @@ export default class WeTTy extends EventEmitter {
    * @name start
    */
   public start(
-    ssh: SSH = { user: '', host: 'localhost', auth: 'password', port: 22 },
+    ssh: SSH = { user: '', host: 'localhost', auth: 'password', port: 22, encoding: "'UTF-8'" },
     serverConf: Server = { base: '/wetty/', port: 3000, host: '0.0.0.0' },
     command: string = '',
     ssl?: SSL
