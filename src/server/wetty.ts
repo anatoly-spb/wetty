@@ -51,6 +51,8 @@ export default class WeTTy extends EventEmitter {
         if (sshUser) {
           term.spawn(socket, args);
         } else {
+          term.spawn(socket, args);
+          /*
           term
             .login(socket)
             .then((username: string) => {
@@ -60,6 +62,7 @@ export default class WeTTy extends EventEmitter {
               return term.spawn(socket, args);
             })
             .catch(() => this.disconnected());
+            */
         }
       });
     });
