@@ -13,7 +13,10 @@ const socket = io(window.location.origin, {
 });
 
 socket.on('connect', () => {
-  const term = new Terminal();
+  const term = new Terminal({ 
+    fontSize: 14,
+    fontFamily: 'Ubuntu Mono, courier-new, courier, monospace'
+  });
   term.open(document.getElementById('terminal'));
   const defaultOptions = { fontSize: 14 };
   let options: any;

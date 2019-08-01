@@ -3,7 +3,7 @@ import { isUndefined } from 'lodash';
 import events from './emitter';
 
 const xterm = {
-  name: 'xterm-256color',
+  name: 'vt220', // vt220 xterm-256color
   cols: 80,
   rows: 30,
   cwd: process.cwd(),
